@@ -7,21 +7,21 @@ import carros5 from '../../assets/cardsCarros/carro5.png';
 import carros6 from '../../assets/cardsCarros/carro6.png';
 import CardCarro from '../cards-carro/cardCarro';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '../carrossel/styles.css';
 
-// Import Swiper core and required modules
+import { useState } from 'react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Carrossel() {
+  const [slidePreView] = useState(3);
   return (
-    <div className='px-24'>
-      <Swiper modules={[Navigation, Pagination, Scrollbar]} spaceBetween={0} slidesPerView={3} navigation scrollbar={{ draggable: true }} className='mySwiper pb-10 mx-28'>
+    <div className=''>
+      <Swiper modules={[Navigation, Pagination, Scrollbar]} spaceBetween={0} slidesPerView={slidePreView} navigation scrollbar={{ draggable: true }} className='mySwiper w-[900px] pb-6'>
         <SwiperSlide>
           <CardCarro imagem={carros1} modelo='Mustang' ano={2015} iconeAno={CalendarDays} km='180 km/h' iconeKm={Gauge} potencia='9/10' iconePotencia={Zap} pontuacao='8/10' iconePontuacao={Users} />
         </SwiperSlide>

@@ -29,8 +29,8 @@ export default function CardCarro({
 }: CardCarroInterface) {
   return (
     <div>
-      <div className='px-8 space-y-5 flex flex-col border-2 border-gray-500/70 rounded-3xl h-[360px] w-[250px] relative'>
-        <div className=' relative mt-8 text-center font-normal text-xl'>
+      <div className='px-8 space-y-5 flex flex-col border-2 border-gray-500/70 rounded-3xl h-[360px] w-[250px]'>
+        <div className='mt-8 text-center font-normal text-xl'>
           <img src={imagem} alt={modelo} width={250} height={250} className='-mt-11' />
           <span>{modelo}</span>
         </div>
@@ -51,7 +51,7 @@ export default function CardCarro({
           <span className='ml-2'>{pontuacao}</span>
         </div>
 
-        <button className='w-full px-4 py-2 text-center border-2 border-gray-500 rounded-full'>
+        <button className='w-full px-4 py-2 text-center border-2 border-gray-500 rounded-full hover:bg-zinc-400/80 hover:text-white'>
           <a href='#'>Ver Carro</a>
         </button>
       </div>

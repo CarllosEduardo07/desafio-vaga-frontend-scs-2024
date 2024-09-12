@@ -17,5 +17,7 @@
 }
 .mySwiper .swiper-button-prev {
   color: #000;
-
+}
+.swiper-slide .swiper-slide-next{
+  background-color: red;
 }
