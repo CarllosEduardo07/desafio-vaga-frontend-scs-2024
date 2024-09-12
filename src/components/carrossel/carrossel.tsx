@@ -13,15 +13,40 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import '../carrossel/styles.css';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Carrossel() {
-  const [slidePreView] = useState(3);
+  const [slidePreView, setSlidePreView] = useState(3);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 600) {
+        setSlidePreView(1);
+      } else if (window.innerWidth < 775) {
+        setSlidePreView(2);
+      } else {
+        setSlidePreView(3);
+      }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className=''>
-      <Swiper modules={[Navigation, Pagination, Scrollbar]} spaceBetween={0} slidesPerView={slidePreView} navigation scrollbar={{ draggable: true }} className='mySwiper w-[900px] pb-6'>
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar]}
+        spaceBetween={0}
+        slidesPerView={slidePreView}
+        navigation
+        scrollbar={{ draggable: true }}
+        className='mySwiper ml-24 md:ml-auto md:w-[800px] lg:w-[900px] pb-6'
+      >
         <SwiperSlide>
           <CardCarro imagem={carros1} modelo='Mustang' ano={2015} iconeAno={CalendarDays} km='180 km/h' iconeKm={Gauge} potencia='9/10' iconePotencia={Zap} pontuacao='8/10' iconePontuacao={Users} />
         </SwiperSlide>
