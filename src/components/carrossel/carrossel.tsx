@@ -20,8 +20,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function Carrossel() {
   return (
-    <div>
-      <Swiper modules={[Navigation, Pagination, Scrollbar]} spaceBetween={50} slidesPerView={3} navigation scrollbar={{ draggable: true }} className='mySwiper pb-10'>
+    <div className='px-24'>
+      <Swiper modules={[Navigation, Pagination, Scrollbar]} spaceBetween={0} slidesPerView={3} navigation scrollbar={{ draggable: true }} className='mySwiper pb-10 mx-28'>
         <SwiperSlide>
           <CardCarro imagem={carros1} modelo='Mustang' ano={2015} iconeAno={CalendarDays} km='180 km/h' iconeKm={Gauge} potencia='9/10' iconePotencia={Zap} pontuacao='8/10' iconePontuacao={Users} />
         </SwiperSlide>
